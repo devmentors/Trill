@@ -1,0 +1,33 @@
+apps:
+  - name: apigateway
+    script: dotnet run
+    cwd: ../Trill.APIGateway/src/Trill.APIGateway
+    max_restarts: 3
+  - name: pusher
+    script: dotnet run
+    cwd: ../Trill.Pusher/src/Trill.Pusher
+    max_restarts: 3
+  - name: ads
+    script: dotnet run
+    cwd: ../Trill.Services.Ads/src/Trill.Services.Ads.Api
+    max_restarts: 3
+  - name: analytics
+    script: dotnet run
+    cwd: ../Trill.Services.Analytics/src/Trill.Services.Analytics.Api
+    max_restarts: 3
+  - name: stories
+    script: dotnet run
+    cwd: ../Trill.Services.Stories/src/Trill.Services.Stories.Api
+    max_restarts: 3
+  - name: timeline
+    script: dotnet run
+    cwd: ../Trill.Services.Timeline/src/Trill.Services.Timeline.Api
+    max_restarts: 3
+  - name: users
+    script: dotnet run
+    cwd: ../Trill.Services.Users/src/Trill.Services.Users.Api
+    max_restarts: 3
+  # - name: web
+  #   script: dotnet run
+  #   cwd: ../Trill.Web/src/Trill.Web.UI
+  #   max_restarts: 3

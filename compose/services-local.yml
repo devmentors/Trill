@@ -1,0 +1,80 @@
+version: "3.7"
+
+services:
+  api-gateway:
+    build: ../../Trill.APIGateway
+    container_name: trill-api-gateway
+    restart: unless-stopped
+    ports:
+      - 5000:80
+    networks:
+      - trill
+
+  pusher:
+    build: ../../Trill.Pusher
+    container_name: trill-pusher
+    restart: unless-stopped
+    ports:
+      - 5010:5010
+      - 5011:5011  
+    networks:
+      - trill
+
+  trill-web:
+    build: ../../Trill.Web
+    container_name: trill-web
+    restart: unless-stopped
+    ports:
+      - 5020:80
+    networks:
+      - trill
+
+  ads-service:
+    build: ../../Trill.Services.Ads
+    container_name: trill-ads
+    restart: unless-stopped
+    ports:
+      - 5030:80 
+    networks:
+      - trill
+
+  analytics-service:
+    build: ../../Trill.Services.Analytics
+    container_name: trill-analytics
+    restart: unless-stopped
+    ports:
+      - 5040:80
+    networks:
+      - trill
+
+  stories-service:
+    build: ../../Trill.Services.stories
+    container_name: trill-stories
+    restart: unless-stopped
+    ports:
+      - 5050:80
+    networks:
+      - trill
+
+  timeline-service:
+    build: ../../Trill.Services.Timeline
+    container_name: trill-timeline
+    restart: unless-stopped
+    ports:
+      - 5060:80
+    networks:
+      - trill
+
+  users-service:
+    build: ../../Trill.Services.Users
+    container_name: trill-users
+    restart: unless-stopped
+    ports:
+      - 5070:80
+    networks:
+      - trill
+
+networks:
+  trill:
+    name: trill-network
+    external: true
