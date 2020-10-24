@@ -27,13 +27,13 @@ scrape_configs:
     static_configs:
       - targets: ['trill-analytics-service']
 
-  - job_name: 'trill-timeline-service'
-    static_configs:
-      - targets: ['trill-timeline-service']
-
   - job_name: 'trill-stories-service'
     static_configs:
       - targets: ['trill-stories-service']
+
+  - job_name: 'trill-timeline-service'
+    static_configs:
+      - targets: ['trill-timeline-service']
 
   - job_name: 'trill-users-service'
     static_configs:

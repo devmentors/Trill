@@ -27,11 +27,11 @@ scrape_configs:
     static_configs:
       - targets: ['docker.for.win.localhost:5040']
 
-  - job_name: 'trill-timeline-service'
+  - job_name: 'trill-stories-service'
     static_configs:
       - targets: ['docker.for.win.localhost:5050']
 
-  - job_name: 'trill-stories-service'
+  - job_name: 'trill-timeline-service'
     static_configs:
       - targets: ['docker.for.win.localhost:5060']
 
