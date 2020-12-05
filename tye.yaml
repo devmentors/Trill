@@ -1,0 +1,46 @@
+name: trill
+services:
+- name: API
+  project: ../Trill.APIGateway/src/Trill.APIGateway/Trill.APIGateway.csproj
+  bindings:
+  - port: 5000
+
+- name: Pusher
+  project: ../Trill.Pusher/src/Trill.Pusher/Trill.Pusher.csproj
+  bindings:
+  - port: 5010
+
+- name: Ads
+  project: ../Trill.Services.Ads/src/Trill.Services.Ads.Api/Trill.Services.Ads.Api.csproj
+  bindings:
+  - port: 5030
+
+- name: Analytics
+  project: ../Trill.Services.Analytics/src/Trill.Services.Analytics.Api/Trill.Services.Analytics.Api.csproj
+  bindings:
+  - port: 5040
+
+- name: Stories
+  project: ../Trill.Services.Stories/src/Trill.Services.Stories.Api/Trill.Services.Stories.Api.csproj
+  bindings:
+  - port: 5050
+
+- name: Timeline
+  project: ../Trill.Services.Timeline/src/Trill.Services.Timeline.Api/Trill.Services.Timeline.Api.csproj
+  bindings:
+  - port: 5060
+
+- name: Users
+  project: ../Trill.Services.Users/src/Trill.Services.Users.Api/Trill.Services.Users.Api.csproj
+  bindings:
+  - port: 5070
+
+- name: Saga
+  project: ../Trill.Saga/src/Trill.Saga/Trill.Saga.csproj
+  bindings:
+  - port: 5080
+
+- name: Web
+  project: ../Trill.Web/src/Trill.Web.UI/Trill.Web.UI.csproj
+  bindings:
+  - port: 5020
