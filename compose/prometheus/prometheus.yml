@@ -9,35 +9,35 @@ scrape_configs:
 
   - job_name: 'trill-api-gateway'
     static_configs:
-      - targets: ['docker.for.win.localhost:5000']
+      - targets: ['host.docker.internal:5000']
 
   - job_name: 'trill-pusher'
     static_configs:
-      - targets: ['docker.for.win.localhost:5010']
+      - targets: ['host.docker.internal:5010']
 
   - job_name: 'trill-saga'
     static_configs:
-      - targets: ['docker.for.win.localhost:5080']
+      - targets: ['host.docker.internal:5080']
 
   - job_name: 'trill-ads-service'
     static_configs:
-      - targets: ['docker.for.win.localhost:5030']
+      - targets: ['host.docker.internal:5030']
 
   - job_name: 'trill-analytics-service'
     static_configs:
-      - targets: ['docker.for.win.localhost:5040']
+      - targets: ['host.docker.internal:5040']
 
   - job_name: 'trill-stories-service'
     static_configs:
-      - targets: ['docker.for.win.localhost:5050']
+      - targets: ['host.docker.internal:5050']
 
   - job_name: 'trill-timeline-service'
     static_configs:
-      - targets: ['docker.for.win.localhost:5060']
+      - targets: ['host.docker.internal:5060']
 
   - job_name: 'trill-users-service'
     static_configs:
-      - targets: ['docker.for.win.localhost:5070']
+      - targets: ['host.docker.internal:5070']
 
   - job_name: 'rabbitmq'
     static_configs:
