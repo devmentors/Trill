@@ -24,31 +24,31 @@ services:
     - 9998:9998
     - 9999:9999
 
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    restart: unless-stopped
-    networks:
-      - trill
-    ports:
-      - 3000:3000
-    # volumes:
-    #   - grafana:/var/lib/grafana
+  # grafana:
+  #   image: grafana/grafana
+  #   container_name: grafana
+  #   restart: unless-stopped
+  #   networks:
+  #     - trill
+  #   ports:
+  #     - 3000:3000
+  #   # volumes:
+  #   #   - grafana:/var/lib/grafana
 
-  jaeger:
-    image: jaegertracing/all-in-one
-    container_name: jaeger
-    restart: unless-stopped
-    networks:
-      - trill
-    ports:
-      - 5775:5775/udp
-      - 5778:5778
-      - 6831:6831/udp
-      - 6832:6832/udp
-      - 9411:9411
-      - 14268:14268
-      - 16686:16686
+  # jaeger:
+  #   image: jaegertracing/all-in-one
+  #   container_name: jaeger
+  #   restart: unless-stopped
+  #   networks:
+  #     - trill
+  #   ports:
+  #     - 5775:5775/udp
+  #     - 5778:5778
+  #     - 6831:6831/udp
+  #     - 6832:6832/udp
+  #     - 9411:9411
+  #     - 14268:14268
+  #     - 16686:16686
 
   mongo:
     image: mongo
@@ -64,16 +64,16 @@ services:
     volumes:
       - mongo:/data/db
 
-  prometheus:
-    build: ./prometheus
-    container_name: prometheus
-    restart: unless-stopped
-    networks:
-      - trill
-    ports:
-      - 9090:9090
-    # volumes:
-    #   - prometheus:/prometheus
+  # prometheus:
+  #   build: ./prometheus
+  #   container_name: prometheus
+  #   restart: unless-stopped
+  #   networks:
+  #     - trill
+  #   ports:
+  #     - 9090:9090
+  #   # volumes:
+  #   #   - prometheus:/prometheus
 
   rabbitmq:
     build: ./rabbitmq
@@ -99,32 +99,32 @@ services:
     volumes: 
       - redis:/data
 
-  seq:
-    image: datalust/seq 
-    container_name: seq
-    restart: unless-stopped
-    environment:
-      - ACCEPT_EULA=Y
-    networks:
-      - trill
-    ports:
-      - 5341:80
-    # volumes: 
-    #   - seq:/data
+  # seq:
+  #   image: datalust/seq 
+  #   container_name: seq
+  #   restart: unless-stopped
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #   networks:
+  #     - trill
+  #   ports:
+  #     - 5341:80
+  #   # volumes: 
+  #   #   - seq:/data
 
-  vault:
-    image: vault
-    container_name: vault
-    restart: unless-stopped
-    environment:
-      - VAULT_ADDR=http://127.0.0.1:8200
-      - VAULT_DEV_ROOT_TOKEN_ID=secret
-    cap_add:
-      - IPC_LOCK
-    networks:
-      - trill
-    ports:
-      - 8200:8200
+  # vault:
+  #   image: vault
+  #   container_name: vault
+  #   restart: unless-stopped
+  #   environment:
+  #     - VAULT_ADDR=http://127.0.0.1:8200
+  #     - VAULT_DEV_ROOT_TOKEN_ID=secret
+  #   cap_add:
+  #     - IPC_LOCK
+  #   networks:
+  #     - trill
+  #   ports:
+  #     - 8200:8200
 
 networks:
   trill:
@@ -145,4 +145,3 @@ volumes:
     driver: local
   # seq:
   #   driver: local
-  
